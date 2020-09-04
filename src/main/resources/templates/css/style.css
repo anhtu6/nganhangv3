@@ -1,0 +1,113 @@
+#logo {
+    background: F4F4F4;
+}
+.icon-background{
+    background-color: #808080;
+}
+.icon {
+   display: inline-block;
+    margin-top: 20px;
+    margin-right: 5px;
+    
+}
+
+.fa-cart-plus {
+    font-size: 16px;
+    color: white;
+    padding-left: 5px;
+}
+.icon-background {
+    display: flex;
+    background-color: gray;
+    width: 32px;
+    height: 32px;
+    position: relative;
+    border-radius: 45%;
+}
+.cart-amount {
+   width: 16px;
+   text-align: center;
+   font-size: 11px;
+    background-color: red;
+    border-radius: 2px;
+    position: absolute;
+    top: -5px;
+    right: -5px;
+
+}
+.myinput {
+    width: 380px !important;
+}
+#search {
+    margin-top: 10px;
+}
+.sidephu {
+    background-color: orange;
+    height: 70px;
+    position: relative;
+    transition: 0.5s;
+}
+.sidephu-child {
+    float: left;
+    
+}
+.mybutton {
+    background-color: #D35400;
+    border: 0px;
+    border-radius: 3px;
+    display: inline-block;
+    position: absolute;
+    top: 28px;
+    right: 18px;
+}
+.mybutton2 {
+    background-color: #1ABC9C;
+    border: 0px;
+    border-radius: 3px;
+    display: inline-block;
+    position: absolute;
+    top: 28px;
+    right: 18px;
+}
+.mystar {
+    color: white;
+    font-size: 38px;
+    line-height: 70px;
+}
+.sale {
+    font-size: 28px;
+    margin-top: 5px;
+    color: white;
+}
+.sale-content {
+    color: white;
+    margin-top: -10px;
+}
+.call-to-action {
+    margin-left: 20px;
+}
+.sidephu:hover {
+    background-color: red;
+}
+.sidephu2 {
+    background-color: #2ECC71;
+    height: 70px;
+    position: relative;
+    transition: 0.5s;
+}
+.sidephu2:hover {
+    background-color: green;
+}
+.product-item img,.product-item a,.product-item span {
+    display: block;
+}
+.brand {
+    margin: 0 auto;
+}
+.price-after {
+    font-weight: bold;
+    color: red;
+}
+.price-before {
+    text-decoration: line-through;
+}

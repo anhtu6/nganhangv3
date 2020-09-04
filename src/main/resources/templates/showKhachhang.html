@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <script src="./js/jquery-3.2.1.js"></script>
+    <script src="./js/bootstrap.js"></script>
+    <style>
+        #header,#footer {
+            background-color: aquamarine;
+        }
+        .big-button {
+            width: 80%;
+            height: 50px;
+            background-color: antiquewhite;
+        }
+        td {
+            padding-right: 5px;
+        }
+
+    </style>
+</head>
+<body>
+<!-- begin header-->
+<div id="header">
+    <h3>Chào mừng đến với ngân hàng KITS</h3>
+    <h5>Thời gian hiện tại là 10h</h5>
+</div>
+<!--end header-->
+<!--begin body-->
+<div id="body" >
+   <table>
+       <tr>
+           <th>Mã khách hàng</th>
+          <th>Tên khách hàng</th>
+           <th>Chứng minh thư</th>
+           <th>Ngày sinh</th>
+           <th>Địa chỉ</th>
+       </tr>
+       <th:block th:each="khachhang:${khachhangs}">
+        <tr>
+            <td th:text="${khachhang.makhachhang}"></td>
+            <td th:text="${khachhang.tenkhachhang}"></td>
+            <td th:text="${khachhang.chungminhthu}"></td>
+            <td th:text="${khachhang.ngaysinh}"></td>
+            <td th:text="${khachhang.diachi}"></td>
+        </tr>
+
+       </th:block>
+
+
+   </table>
+</div>
+<!--end body-->
+<!--begin footer-->
+<div id="footer">
+    <h3>All rights reserved 2020 KITS Bank</h3>
+    <div id="footer-bar">
+        <a href="#">Về chúng tôi</a>
+        <a href="#">Liên hệ</a>
+        <a href="#">Thông tin tài chính</a>
+    </div>
+</div>
+<!--end footer-->
+</body>
+</html>
