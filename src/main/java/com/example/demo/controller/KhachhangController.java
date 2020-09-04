@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
+import java.util.Optional;
 
 @Controller
 @RequestMapping("/khachhang")
@@ -42,5 +43,44 @@ public class KhachhangController {
         modelAndView.addObject("message","da tao khach thanh cong");
         return modelAndView;
     }
+   @GetMapping("/edit-khachhang/{id}")
+    public ModelAndView showEditForm(@PathVariable String id){
+       Optional<Khachhang> khachhang = khachhangService.findById(id);
+       if(khachhang.isPresent()) {
+           ModelAndView modelAndView = new ModelAndView("/suaKhachhang");
+           modelAndView.addObject("khachhang", khachhang);
+           return modelAndView;
+
+       }else {
+           ModelAndView modelAndView = new ModelAndView("/error404");
+           return modelAndView;
+       }     
+   }
+   @PostMapping("/edit-khachhang")
+    public ModelAndView updateKhachhang(@ModelAttribute Khachhang khachhang){
+        khachhangService.save(khachhang);
+        ModelAndView modelAndView = new ModelAndView("suaKhachhang");
+        modelAndView.addObject("khachhang",khachhang);
+        modelAndView.addObject("mesage","de them thanh cong");
+        return modelAndView;
+   }
+   @GetMapping("/xoa-khachhang/{id}")
+    public ModelAndView showDeleteForm(@PathVariable String id){
+       Optional<Khachhang> khachhang = khachhangService.findById(id);
+       if(khachhang.isPresent()){
+           ModelAndView modelAndView = new ModelAndView("xoaKhachhang");
+           modelAndView.addObject("khachhang",khachhang);
+           return modelAndView;
+       } else {
+           ModelAndView modelAndView = new ModelAndView("error404");
+           return modelAndView;
+       }
+   }
+   @PostMapping("/xoa-khachhang")
+    public String deleteKhachhang(@ModelAttribute Khachhang khachhang){
+        khachhangService.remove(khachhang.getMakhachhang());
+        return "redirect:list";
+   }
+
 
 }

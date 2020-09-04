@@ -5,6 +5,8 @@ import com.example.demo.repository.KhachHangRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 @Service
 public class KhachhangServiceImpl implements KhachhangService {
     @Autowired
@@ -19,13 +21,15 @@ public class KhachhangServiceImpl implements KhachhangService {
         khachHangRepository.save(khachhang);
     }
 
-//    @Override
-//    public void edit(Khachhang khachhang) {
-//
-//    }
-//
-//    @Override
-//    public void delete(Khachhang khachhang) {
-//
-//    }
+    @Override
+    public Optional<Khachhang> findById(String id) {
+        return khachHangRepository.findById(id);
+    }
+
+    @Override
+    public void remove(String id) {
+        khachHangRepository.deleteById(id);
+    }
+
+
 }
