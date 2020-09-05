@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="./css/bootstrap.css">
 
 
-<!--    <link rel="stylesheet" th:href="@{/css/bootstrap.css}">-->
+    <!--    <link rel="stylesheet" th:href="@{/css/bootstrap.css}">-->
     <script src="../js/jquery-3.2.1.js"></script>
     <script src="../js/bootstrap.js"></script>
     <style>
@@ -40,36 +40,36 @@
 <!--end header-->
 <!--begin body-->
 <div id="body" >
-<!--    <form action="/khachhang/search-khachhang" method="post">-->
+    <!--    <form action="/khachhang/search-khachhang" method="post">-->
     <form action="/khachhang/search-khachhang" method="post">
         <input name="searchKhachhang" style="width: 350px" type="text" placeholder="Tìm kiếm khách hàng theo tên hoặc Id">
         <button type="submit">Tìm kiếm</button>
     </form>
-   <table>
-       <tr>
-           <th>Mã khách hàng</th>
-          <th>Tên khách hàng</th>
-           <th>Chứng minh thư</th>
-           <th>Ngày sinh</th>
-           <th>Địa chỉ</th>
-           <th colspan="2">Thao tác</th>
-       </tr>
-       <th:block th:each="khachhang:${khachhangs}">
+    <table>
         <tr>
-            <td th:text="${khachhang.makhachhang}"></td>
-            <td th:text="${khachhang.tenkhachhang}"></td>
-            <td th:text="${khachhang.chungminhthu}"></td>
-            <td th:text="${khachhang.ngaysinh}"></td>
-            <td th:text="${khachhang.diachi}"></td>
-            <td ><a th:href="@{/khachhang/edit-khachhang/{id}(id=${khachhang.getMakhachhang()})}">Sửa</a></td>
-            <td ><a th:href="@{/khachhang/xoa-khachhang/{id}(id=${khachhang.getMakhachhang()})}">Xóa</a></td>
+            <th>Mã khách hàng</th>
+            <th>Tên khách hàng</th>
+            <th>Chứng minh thư</th>
+            <th>Ngày sinh</th>
+            <th>Địa chỉ</th>
+            <th colspan="2">Thao tác</th>
         </tr>
+        <th:block th:each="khachhang:${khachhangs}">
+            <tr>
+                <td th:text="${khachhang.makhachhang}"></td>
+                <td th:text="${khachhang.tenkhachhang}"></td>
+                <td th:text="${khachhang.chungminhthu}"></td>
+                <td th:text="${khachhang.ngaysinh}"></td>
+                <td th:text="${khachhang.diachi}"></td>
+                <td ><a th:href="@{/khachhang/edit-khachhang/{id}(id=${khachhang.getMakhachhang()})}">Sửa</a></td>
+                <td ><a th:href="@{/khachhang/xoa-khachhang/{id}(id=${khachhang.getMakhachhang()})}">Xóa</a></td>
+            </tr>
 
-       </th:block>
+        </th:block>
 
 
 
-   </table>
+    </table>
     <a href=""></a>
     <a href="/khachhang/create-khachhang">Đăng kí khách hàng mới</a>
 

@@ -8,6 +8,8 @@ import java.util.Date;
 
 
 @Entity
+//@NamedQuery(query = "select e from khachhang where e.name like :searchName",name="findCus")
+
 public class Khachhang {
     @Id
     @Column(length = 128)
