@@ -3,16 +3,16 @@ package com.example.demo.model;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
-import java.time.LocalDateTime;
+
 import java.util.Date;
 
 
 @Entity
-//@NamedQuery(query = "select e from khachhang where e.name like :searchName",name="findCus")
+
 
 public class Khachhang {
     @Id
-    @Column(length = 128)
+    @Column(length = 10)
     private String makhachhang;
     private String tenkhachhang;
     private Long chungminhthu;
