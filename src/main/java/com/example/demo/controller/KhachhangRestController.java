@@ -9,6 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 
@@ -63,7 +64,8 @@ public class KhachhangRestController {
     }
     @GetMapping("/search-khachhang/{searchKhachhang}")
     public List<Khachhang> showSearchResultGet(@PathVariable("searchKhachhang") String searchKhachhang){
-        List<Khachhang> khachhangs =khachhangService.findByName(searchKhachhang);
+
+        List<Khachhang> khachhangs = khachhangService.findByName(searchKhachhang);
         return khachhangs;
     }
 

@@ -50,5 +50,10 @@ public class KhachhangServiceImpl implements KhachhangService {
 
     }
 
+    @Override
+    public List<Khachhang> findByIdQuery(String searchId) {
+        return khachHangRepository.findByIdQuery(searchId);
+    }
+
 
 }

@@ -7,23 +7,21 @@ import java.util.Collection;
 @Entity
 public class Chucvu {
     @Id
-    //@Column(length = 10)
-    @GeneratedValue
-    private Long machucvu;
+    @Column(length = 10)
+    private String machucvu;
     @Column(length = 45)
     private String tenchucvu;
 
-    @OneToMany(mappedBy = "chucvu",cascade = CascadeType.ALL)
-    private Collection<Nhanvien> nhanviens;
+
     public Chucvu(){
 
     }
 
-    public Long getMachucvu() {
+    public String getMachucvu() {
         return machucvu;
     }
 
-    public void setMachucvu(Long machucvu) {
+    public void setMachucvu(String machucvu) {
         this.machucvu = machucvu;
     }
 

@@ -16,6 +16,7 @@ public interface KhachHangRepository extends CrudRepository<Khachhang, String> {
 //    Optional<Khachhang>
    // @Query(value = "select e from khachhang e where e.name like ?1")
    // List<Khachhang> searchByName(String searchName);
-    @Query(value = "select * from khachhang  where tenkhachhang like %:searchName%",nativeQuery = true)
+    @Query(value = "select * from khachhang  where tenkhachhang like %:searchName% or makhachhang like %:searchName%",nativeQuery = true)
     List<Khachhang> findAllByTenkhachhang(@Param("searchName") String searchName);
+
 }
