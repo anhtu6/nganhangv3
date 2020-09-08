@@ -14,9 +14,12 @@ public class Khachhang {
     @Id
     @Column(length = 10)
     private String makhachhang;
+    @Column(length = 45)
     private String tenkhachhang;
+    @Column(length = 20)
     private Long chungminhthu;
     @DateTimeFormat(pattern = "yyyy-MM-dd")
+    @Column(length = 45)
     private Date ngaysinh;
     private String diachi;
 

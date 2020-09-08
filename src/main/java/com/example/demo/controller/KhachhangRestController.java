@@ -35,14 +35,19 @@ public class KhachhangRestController {
     public void saveKhachhang(@RequestBody Khachhang khachhang){
         khachhangService.save(khachhang);
     }
+
+
     @GetMapping("/edit-khachhang/{id}")
     public Optional<Khachhang> showEditKhachhangForm(@PathVariable String id){
         Optional<Khachhang> khachhang = khachhangService.findById(id);
         return khachhang;
     }
+
+
     @PostMapping(path = "/edit-khachhang",consumes = "application/json")
     @ResponseStatus(HttpStatus.CREATED)
     public void saveEditedKhachhang(@RequestBody Khachhang khachhang){
+
         khachhangService.save(khachhang);
     }
     @GetMapping("/xoa-khachhang/{id}")

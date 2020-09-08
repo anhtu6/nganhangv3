@@ -1,24 +1,29 @@
 package com.example.demo.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
+import javax.validation.constraints.Max;
+import java.util.Collection;
 
 @Entity
 public class Chucvu {
     @Id
-    @Column(length = 128)
-    private String machucvu;
+    //@Column(length = 10)
+    @GeneratedValue
+    private Long machucvu;
+    @Column(length = 45)
     private String tenchucvu;
+
+    @OneToMany(mappedBy = "chucvu",cascade = CascadeType.ALL)
+    private Collection<Nhanvien> nhanviens;
     public Chucvu(){
 
     }
 
-    public String getMachucvu() {
+    public Long getMachucvu() {
         return machucvu;
     }
 
-    public void setMachucvu(String machucvu) {
+    public void setMachucvu(Long machucvu) {
         this.machucvu = machucvu;
     }
 
