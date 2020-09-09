@@ -13,7 +13,7 @@ public interface KhachhangService {
      Optional<Khachhang> findById(String id);
      void remove(String id);
     List<Khachhang> findByName(String searchName);
-    List<Khachhang> findByIdQuery(String searchId);
+
 }
 
 
